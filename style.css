@@ -9,15 +9,15 @@ body {
 
 @font-face {
     font-family: SF-Light;
-    src: url(SF/SanFranciscoDisplay-Light.otf);
+    src: url(SF-Font/SanFranciscoDisplay-Light.otf);
 }
 @font-face {
     font-family: SF-Reg;
-    src: url(SF/SanFranciscoDisplay-Regular.otf);
+    src: url(SF-Font/SanFranciscoDisplay-Regular.otf);
 }
 @font-face {
     font-family: SF-Thin;
-    src: url(SF/SanFranciscoDisplay-Thin.otf);
+    src: url(SF-Font/SanFranciscoDisplay-Thin.otf);
 }
 
 
@@ -76,21 +76,20 @@ input:first-child {
 }
 
 #viewmessages {
-	margin: 0 auto;
+	  margin: 0 auto;
     display: block;
-    width: 30%;
-    top: 110px;
+    width: 35%;
+    top: 300px;
     position: relative;
     cursor: pointer;
     height: 37px;
     font-family: SF-Reg;
-    font-weight: bold;
     font-size: 20px;
     color: #FFF;
     -webkit-border-radius: 8px;
     border-radius: 14px;
     border-top: 1px solid #FFF;
-    background-color: #62add6;
+    background-color: #2DB5FF
 }
 
 /* GRID LAYOUT */
@@ -194,6 +193,21 @@ clear:both;
 .col12l {width:100%;}
 }
 
+@media (max-width:480px) {
+.col1xl {width:8.33333333%;}
+.col2xl {width:16.66666667%;}
+.col3xl {width:25%;}
+.col4xl {width:33.33333333%;}
+.col5xl {width:41.66666667%;}
+.col6xl {width:50%;}
+.col7xl {width:58.33333333%;}
+.col8xl {width:66.66666667%;}
+.col9xl {width:75%;}
+.col10xl {width:83.33333333%;}
+.col11xl {width:91.66666667%;}
+.col12xl {width:100%;}
+}
+
 .col-l-offset-4 {
   margin-left: 33.33%;
 }
@@ -230,7 +244,7 @@ height:auto;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	-o-user-select: none;
-	user-select: none; 
+	user-select: none;
 }
 
 #text {
@@ -257,14 +271,13 @@ height:auto;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    bottom: 5px;
+    bottom: 10px;
     left: 0;
     width: 75%;
     right: 0;
     cursor: pointer;
     height: 37px;
     font-family: SF-Reg;
-    font-weight: bold;
     font-size: 20px;
     color: #FFF;
     -webkit-border-radius: 8px;
@@ -288,5 +301,5 @@ height:auto;
 
 input#button {
 	background-color: #2DB5FF;
+  letter-spacing: 1px;
 }
-
