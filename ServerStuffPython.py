@@ -17,7 +17,8 @@ class MyHandler(BaseHTTPRequestHandler):
             self.end_headers()
             #w-file is file object. They are buffered which means temporary space as things go through it.
             #helps data get written organized. Gets data to client safely
-            self.wfile.write(bytes(json_string, "utf-8")) #send json to client as bytes. Postman can create data
+            self.wfile.write(bytes(json_string, "utf-8"))
+            #send json to client as bytes. Postman can create data
             #and its put in JSON form. Use fetch API to get the data
         else:
             #404StatusCode if path is not found
