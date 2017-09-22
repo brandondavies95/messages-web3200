@@ -35,7 +35,11 @@ class MyHandler(BaseHTTPRequestHandler):
             length = int(self.headers["Content-length"]) #Number of bytes inside body request to tell header how many to read
             body = self.rfile.read(length).decode("utf-8") #rfile is the request body. Take bytes and turn to utf string so u can parse.
             parsed_body = parse_qs(body) #Parse query string. Broke into key value pairs
-            message = parsed_body['message'][0] #Returns list that is a value [0] first item of list
+            print(parsed_body)
+            message = parsed_body['messages'][0] #Returns list that is a value [0] first item of list
+            datafile = open('data.txt', 'a')
+            datafile.write(message + "\n")
+            datafile.close
             # WRITE TO TEXT FILE HERE
             print("request body:", parsed_body)
             self.send_response(201) #Status codes means success and resource was created for you
