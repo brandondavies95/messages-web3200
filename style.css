@@ -278,7 +278,7 @@ height:auto;
     opacity: .6;
 }
 
-#button {
+#messagebutton {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
@@ -299,18 +299,18 @@ height:auto;
     z-index: 1;
 }
 
-#button:active {
+#messagebutton:active {
 	zoom: 1;
 	filter: alpha(opacity=80);
 	opacity: 0.8;
 }
-#button:focus {
+#messagebutton:focus {
 	zoom: 1;
 	filter: alpha(opacity=80);
 	opacity: 0.8;
 }
 
-input#button {
+input#messagebutton {
 	background-color: #2DB5FF;
   letter-spacing: 1px;
 }
