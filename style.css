@@ -315,3 +315,7 @@ input#messagebutton {
 	background-color: #2DB5FF;
   letter-spacing: 1px;
 }
+
+#allMessages{
+  font-family: SF-Reg;
+}

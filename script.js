@@ -4,11 +4,10 @@
     var postButton = document.getElementById('messagebutton');
     postButton.addEventListener('click', handlePost);
     allMessages.addEventListener('click', getAllMessages);
-    // encodeURIComponent takes legal characters not allowed (spaces,&,/) and encodes them. URL safe encoded characters
-    // get inputs from form and putting it into body
 
     function checkStatus(response) {
       if (response.status >= 200 && response.status < 300) {
+        getAllMessages()
         return response;
       } else {
         var error = new Error(response.statusText);
@@ -21,6 +20,8 @@
     function handlePost() {
       var new_message = document.querySelector('#text');
       console.log(new_message.value)
+      // encodeURIComponent takes legal characters not allowed (spaces,&,/) and encodes them. URL safe encoded characters
+      // get inputs from form and putting it into body
       var encodedString = 'messages=' + encodeURIComponent(new_message.value);
       fetch('http://localhost:8080/messages', {
           // automatically wrapped in object
@@ -43,8 +44,16 @@
       }).then( function (data) {
         messages = data
         console.log(messages)
-        var allMsgDiv = document.querySelector('#allMessages')
-        allMsgDiv.innerHTML = messages;
+        var messageslength = messages.length;
+        var ul = document.querySelector('ul')
+        ul.innerHTML= "";
+        for (var i = 0; i < messageslength; i++) {
+            console.log(messages[i]);
+            var li = document.createElement("li");
+            li.setAttribute('id',messages[i]);
+            li.appendChild(document.createTextNode(messages[i]));
+            ul.appendChild(li);
+        }
       })
         // arrowhand is shorthand es6 lamba function. Takes callback function as argument.
         .then(checkStatus)
@@ -53,6 +62,9 @@
         document.getElementById('viewmessages').style.display = 'none';
         document.getElementById('allMessages').style.marginTop = '100px';
     }
+
+    getAllMessages()
+
   }());
 
 /* Clear the text area when */
