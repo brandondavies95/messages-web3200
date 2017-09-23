@@ -24,10 +24,9 @@ class MyHandler(BaseHTTPRequestHandler):
             #404StatusCode if path is not found
             self.send_response(404)
             self.send_header("Content-Type", "text/html")
-            self.send_header("Access-Control-Allow-Origin", "*") #Enabling CORS  and letting your data be accessed. Dont need on 404
             self.end_headers()
             self.wfile.write(bytes("<h1>404 Page Not Found</h1>", "utf-8"))
-            #404 not found error
+
     def do_POST(self):
         print("Post Path:", self.path)
         #collection path
@@ -37,10 +36,10 @@ class MyHandler(BaseHTTPRequestHandler):
             parsed_body = parse_qs(body) #Parse query string. Broke into key value pairs
             print(parsed_body)
             message = parsed_body['messages'][0] #Returns list that is a value [0] first item of list
+            # WRITE TO TEXT FILE HERE
             datafile = open('data.txt', 'a')
             datafile.write(message + "\n")
             datafile.close
-            # WRITE TO TEXT FILE HERE
             print("request body:", parsed_body)
             self.send_response(201) #Status codes means success and resource was created for you
             self.send_header("Access-Control-Allow-Origin", "*") #Enabling CORS and letting your data be accessed
@@ -52,7 +51,6 @@ class MyHandler(BaseHTTPRequestHandler):
             #404StatusCode if path is not found
             self.send_response(404)
             self.send_header("Content-Type", "text/html")
-            self.send_header("Access-Control-Allow-Origin", "*") #Enabling CORS  and letting your data be accessed. Dont need on 404
             self.end_headers()
             self.wfile.write(bytes("<h1>404 Page Not Found</h1>", "utf-8"))
             #404 not found error

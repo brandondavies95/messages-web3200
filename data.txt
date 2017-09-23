@@ -1,5 +1,5 @@
-Dixie State University
-University of Utah
-Utah Valley University
-Utah State University
-Southern Utah University
+Brandon is adding a new note to his data.txt file because he finally got it to work.
+This should still work
+new note
+new note
+adfasdf
