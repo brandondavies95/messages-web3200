@@ -1,1 +1,1 @@
-# f17-message-log-brandondavies95
+# Brandon's Messages Assignment for WEB3200 with DJ Holt. Fall 2017.
