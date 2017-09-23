@@ -47,11 +47,13 @@
         var messageslength = messages.length;
         var ul = document.querySelector('ul')
         ul.innerHTML= "";
+        var numbers = 0
         for (var i = 0; i < messageslength; i++) {
+            numbers = numbers + 1;
             console.log(messages[i]);
             var li = document.createElement("li");
-            li.setAttribute('id',messages[i]);
-            li.appendChild(document.createTextNode(messages[i]));
+            /*li.setAttribute('id',messages[i]); // This adds an ID to each li*/
+            li.appendChild(document.createTextNode(numbers + ". "+ messages[i]));
             ul.appendChild(li);
         }
       })
@@ -60,7 +62,7 @@
         // never executed if there is no error. Catches any error throughout any number of thens. Catch from throw error
         .catch(error => console.log(error));
         document.getElementById('viewmessages').style.display = 'none';
-        document.getElementById('allMessages').style.marginTop = '100px';
+        document.getElementById('allMessages').style.marginTop = '60px';
     }
 
     getAllMessages()

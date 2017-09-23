@@ -20,8 +20,16 @@ body {
     src: url(SF-Font/SanFranciscoDisplay-Thin.otf);
 }
 @font-face {
+    font-family: SF-UL;
+    src: url(SF-Font/SanFranciscoDisplay-Ultralight.otf);
+}
+@font-face {
     font-family: SF-Bold;
     src: url(SF-Font/SanFranciscoDisplay-Bold.otf);
+}
+@font-face {
+    font-family: Notepad;
+    src: url(NOTEPAD_.TTF);
 }
 
 
@@ -34,7 +42,7 @@ p {
 }
 
 h1 {
-  font-family: SF-Bold;
+  font-family: SF-Thin;
   color: black;
   text-align: center;
   font-size: 40px;
@@ -189,6 +197,10 @@ clear:both;
 .col12m {width:100%;}
 }
 
+.col-m-offset-5 {
+  margin-left: 41.66666667%;
+}
+
 @media (min-width:1200px) {
 .col1l {width:8.33333333%;}
 .col2l {width:16.66666667%;}
@@ -237,9 +249,29 @@ height:auto;
 
 }
 
+@media screen and (max-width:630px) {
+  .col-m-offset-5 {
+    top: 500px;
+    left: -75px;
+  }
+}
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:550px) {
+  .col-m-offset-5 {
+    top: 500px;
+    left: -150px;
+  }
+}
+@media screen and (max-width:450px) {
+  .col-m-offset-5 {
+    top: 500px;
+    left: -117px;
+  }
+}
 
+li:before {
+  content: "Note ";
+  color: #2DB5FF;
 }
 
 
@@ -317,5 +349,23 @@ input#messagebutton {
 }
 
 #allMessages{
-  font-family: SF-Reg;
+  font-family: SF-Light;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+  color: darken(#A68F15, 10%);
+  position: relative;
+  font-size: 16px;
+}
+li {
+  margin: 10px 10px 10px 0;
+  padding: 5px 15px;
+  list-style: none;
+  display: block;
+  position: relative;
+  border-radius: 10px;
+  background-color: #fff;
 }
